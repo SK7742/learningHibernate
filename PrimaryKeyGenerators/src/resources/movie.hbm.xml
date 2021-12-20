@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="beans.BookMovie" table="bookMovie" schema="learninghibernate">
+		<id name = "id">
+		<!-- Types of primary key generators
+			1. Assigned > user is responsible to provide id.
+			2. Identity > [MySQL/DB2] supports only. Table is responsible to generate id's.
+			3. Increment > DB is responsible to fetch max id from table then incremented id will be assigned.
+			3. Sequence > Internally it creates a sequence table, which consist the value of sequence, application and DB both responsible to perform this.
+			4. Hilo > Internally hilo table will be created, which stores next high value
+			5. Native > Internally use increment, Indentity or sequence
+			6. Foriegn > 
+			7. Custom Generator
+		 -->
+			<generator class="increment"></generator>
+		</id>
+		<property name="movie"/>
+		<property name="showTime"/>
+		<property name="seatNo"/>
+	</class>
+</hibernate-mapping>
