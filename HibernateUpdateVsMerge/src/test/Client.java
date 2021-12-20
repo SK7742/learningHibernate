@@ -16,23 +16,16 @@ public class Client {
 		Session s = sf.openSession();
 		Transaction t = s.beginTransaction();
 		
+		s.get(Student.class, 2); //Line x
+		
 		//Create Student Object
 		Student st = new Student();
 		st.setAddress("Raxaul");
-		//st.setEmail("sk@gmail.com");
+		st.setEmail("sk@gmail.com");
 		st.setId(2);
-		st.setName("ShivamKumar");
-		
-		/*int pk = (int) s.save(st); //Primary key will be returned by save method.
-		System.out.println(pk);*/
-		
-		//s.saveOrUpdate(st); //this method will search for the object and if no match found then save otherwise will be updated...
-		
-		//s.delete(st); //st object will be deleted if found.
-		
-		s.update(st); //st object will be updated if found otherwise throw exception.
-		
-		//s.persist(st); //st object will be persist to database if not found else throw duplicate key error
+		st.setName("Shivam");
+		//s.update(st); //At Line x get method returns object of student in session object and here update method will throw an exception
+		s.merge(st);
 		t.commit();
 		s.close();
 		sf.close();
