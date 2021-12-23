@@ -21,13 +21,32 @@ public class App {
 		
 		//testForSelectAllRecordsFromATable(s,t);		//Test Case: 01
 		//testForSelectSingleRow(s,t);					//Test Case: 02
-		testForSelectingMultipleRecords(s,t);			//Test Case: 03
+		//testForSelectingMultipleRecords(s,t);			//Test Case: 03
+		testForCustomQuery(s,t);
 		
 		t.commit();
 		s.close();
-		sf.close();
+	
+	sf.close();
+	}
+	private static void testForCustomQuery(Session s, Transaction t) {
+		Query q = s.createSQLQuery("SELECT * FROM STUDENT T");
+		List<Object> studentList = q.list();
+		studentList.forEach((e) ->{
+			Object[] obj = (Object[]) e;
+			Student temp = mapStudentClass(obj);
+			System.out.println(temp + "\n");
+		});
 	}
 
+	private static Student mapStudentClass(Object[] obj) {
+		Student temp = new Student();
+		temp.setId((int) obj[0]);
+		temp.setName((String) obj[1]);
+		temp.setEmail((String) obj[2]);
+		temp.setAddress((String) obj[3]);
+		return temp;
+	}
 	private static void testForSelectingMultipleRecords(Session s, Transaction t) {
 		//List method is used to retrieve multiple row/column data
 		//Data retrieved in the form of array, we need to cast and store accordingly.
