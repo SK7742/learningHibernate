@@ -1,0 +1,27 @@
+It can be handled through 3 approaches.
+
+1. Table per class: In this case, 1 single table will be created and with the help of descriminator column we will able to
+   identify the record belong from which scenario.
+   Ex: 3 types of employee - Admin/software/Hardware each having a unique property.
+   So in this case when we insert the data with reference to admin the unique property field of
+   software and hardware will be filled as null and descriminator column will contain the type admin.
+   
+   Refer to program: Table per class - Is a relationship
+   
+   
+   
+2. Table per subClass: In this case, multiple tables will be created and will be linked with the help of primary key and foriegn key.
+   For the above scenario 4 tables will be created:
+   a. Employee
+   b. SoftwareEmployee
+   c. HardwareEmployee
+   d. Admin
+   
+   employee table will contain the common information and other 3 tables will contain the unique fields and linked with primary table with the help 
+   of primary key and foriegn key.
+   
+   Refer to program: Table per Subclass - Is a relationship
+   
+   
+3. Table per concrete class: In this case, separate table will be created for each class and each table will contain every field.
+    Refer to program: Table per ConcreteClass - Is a relationship
