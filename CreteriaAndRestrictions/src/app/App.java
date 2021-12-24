@@ -32,7 +32,7 @@ public class App {
 		
 		//selectOperationCriteria(s,t);	//Test Case: 01
 		//selectCriteriaUsingRestriction(s,t); //Test Case: 02
-		//selectUsingProjects(s,t);
+		//selectUsingProjects(s,t);		//Test Case: 03
 		
 		getAvgSalary(s,t);
 		t.commit();
@@ -41,7 +41,11 @@ public class App {
 	}
 
 	private static void getAvgSalary(Session s, Transaction t) {
+		Criteria c = s.createCriteria(Employee.class);
+		Projection p = Projections.avg("salary");
+		c.setProjection(p);
 		
+		c.uniqueResult();
 	}
 
 	private static void selectUsingProjects(Session s, Transaction t) {
