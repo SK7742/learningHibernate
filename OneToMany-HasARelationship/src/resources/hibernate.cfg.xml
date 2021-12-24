@@ -11,11 +11,11 @@
 		<property name="connection.password">root</property>
 		<property name="connection.pool-size">10</property>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-		<property name="hbm2ddl.auto">create</property>
+		<property name="hbm2ddl.auto">update</property>
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		
-		<mapping resource="resources/voter.hbm.xml"/>
-		<mapping resource="resources/vote.hbm.xml"/>
+		<mapping resource="resources/actor.hbm.xml"/>
+		<mapping resource="resources/movies.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>

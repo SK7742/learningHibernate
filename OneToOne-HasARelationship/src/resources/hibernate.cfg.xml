@@ -15,7 +15,6 @@
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		
-		<mapping resource="resources/voter.hbm.xml"/>
-		<mapping resource="resources/vote.hbm.xml"/>
+		<mapping resource="resources/employee.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>

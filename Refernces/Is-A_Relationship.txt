@@ -24,4 +24,4 @@ It can be handled through 3 approaches.
    
    
 3. Table per concrete class: In this case, separate table will be created for each class and each table will contain every field.
-    Refer to program: Table per ConcreteClass - Is a relationship
+    Refer to program: Table per ConcreteClass - Is a relationship.
